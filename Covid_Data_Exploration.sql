@@ -80,6 +80,7 @@ select *
 from public.coviddeaths d join public.covidvacc v
 on d.location=v.location and d.date=v.date;
 
+--Getting total vaccinations done for each location grouped by date
 with cte as
 (Select dea.continent, dea.location, dea.date, dea.population
 , MAX(vac.total_vaccinations) as RollingPeopleVaccinated
